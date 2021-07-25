@@ -14,4 +14,24 @@ describe Trip, type: :model do
     it { should have_many(:trail_trips) }
     it { should have_many(:trails).through(:trail_trips)}
   end
+
+  describe 'instance methods' do
+    before(:each) do
+      @trip1 = Trip.create!(name: 'summer')
+      @trip2 = Trip.create!(name: 'spring break')
+      @trip3 = Trip.create!(name: 'thanksgiving break')
+      @trip4 = Trip.create!(name: 'winter break')
+      @trip5 = Trip.create!(name: '3 day weekend')
+      @trail1 = @trip1.trails.create!(name: 'River Trail', length: 6, address: '123 Front St., Fakecity, WY 00011')
+      @trail2 = @trip1.trails.create!(name: 'Ocean Trail', length: 3, address: '456 Ocean Ave., Fakecity, CA 12345')
+      @trail3 = @trip1.trails.create!(name: 'Mountain Trail', length: 10, address: '789 Canyon St., Fakecity, WY 00011')
+      @trail4 = @trip2.trails.create!(name: 'Fake Trail', length: 6, address: '00 Not St., Fakecity, WY 00011')
+    end
+
+    describe '#total_distance' do
+      it 'calculates the total length from all trails on that trip' do
+        expect(@trip1.total_distance).to eq(19)
+      end
+    end
+  end
 end
