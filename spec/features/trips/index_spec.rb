@@ -10,7 +10,6 @@ RSpec.describe 'The trips index page' do
     visit '/trips'
   end
   it 'displays a list of all hiking trip names' do
-    save_and_open_page
     expect(page).to have_content(@trip1.name)
     expect(page).to have_content(@trip2.name)
     expect(page).to have_content(@trip3.name)
