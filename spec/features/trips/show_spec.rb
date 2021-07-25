@@ -44,4 +44,11 @@ RSpec.describe 'The trips show page' do
   it 'displays the name and length of the longest trail on the trip' do
     expect(page).to have_content("Shortest Trail: #{@trail2.name}, with a length of: #{@trail2.length}")
   end
+
+  it 'has the name of each trail as a link to that trails show page' do
+    expect(page).to have_link(@trail1.name)
+    click_link @trail1.name
+
+    expect(current_path).to eq("/trails/#{@trail1.id}")
+  end
 end

@@ -1,6 +1,6 @@
 <h3><%= @trip.name %></.h3>
   <% @trip.trails.each do |trail|%>
-    <%= trail.name %>
+    <%= link_to trail.name, "/trails/#{trail.id}" %>
     <%= trail.length %>
     <%= trail.address %>
   <% end %>
