@@ -40,4 +40,8 @@ RSpec.describe 'The trips show page' do
   it 'displays the name and length of the longest trail on the trip' do
     expect(page).to have_content("Longest Trail: #{@trail3.name}, with a length of: #{@trail3.length}")
   end
+
+  it 'displays the name and length of the longest trail on the trip' do
+    expect(page).to have_content("Shortest Trail: #{@trail2.name}, with a length of: #{@trail2.length}")
+  end
 end

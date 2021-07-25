@@ -45,5 +45,11 @@ describe Trip, type: :model do
         expect(@trip1.longest_trail).to eq(@trail3)
       end
     end
+
+    describe '#shortest_trail' do
+      it 'determines the shortest trail on the trip' do
+        expect(@trip1.shortest_trail).to eq(@trail2)
+      end
+    end
   end
 end

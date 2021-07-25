@@ -9,3 +9,6 @@
   <p>Average trip hiking length: <%= "#{@trip.average_distance}"  %></p>
 <p>Longest Trail on Trip:</p>
 <p><%= "Longest Trail: #{@trip.longest_trail.name}, with a length of: #{@trip.longest_trail.length}" %></p>
+
+<p>Shortest Trail on Trip:</p>
+<p><%= "Shortest Trail: #{@trip.shortest_trail.name}, with a length of: #{@trip.shortest_trail.length}" %></p>
