@@ -27,4 +27,9 @@ RSpec.describe 'The trips show page' do
     expect(page).to_not have_content(@trail4.name)
     expect(page).to_not have_content(@trail4.address)
   end
+
+  it 'displays the total length of the trip by adding up the length of all associated trails' do
+    expect(page).to have_content("Total trip hiking length: 19"
+    )
+  end
 end
