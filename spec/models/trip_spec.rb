@@ -38,7 +38,12 @@ describe Trip, type: :model do
       it 'calculates the average length from all trails on that trip' do
         expect(@trip1.average_distance).to eq((19/3))
       end
+    end
 
+    describe '#longest_trail' do
+      it 'determines the longest trail on the trip' do
+        expect(@trip1.longest_trail).to eq(@trail3)
+      end
     end
   end
 end

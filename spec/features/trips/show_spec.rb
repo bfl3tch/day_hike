@@ -35,6 +35,9 @@ RSpec.describe 'The trips show page' do
 
   it 'displays the average length of the trails on the trip' do
     expect(page).to have_content("Average trip hiking length: 6")
+  end
 
+  it 'displays the name and length of the longest trail on the trip' do
+    expect(page).to have_content("Longest Trail: #{@trail3.name}, with a length of: #{@trail3.length}")
   end
 end
