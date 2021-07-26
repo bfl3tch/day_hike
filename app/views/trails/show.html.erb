@@ -1,3 +1,9 @@
 <h2><%= @trail.name  %></h2>
 <h4>Length:<%= @trail.length  %></h4>
 <h4>Address:<%= @trail.address  %></h4>
+
+<% @trips.each do |trip|  %>
+<h6>Trips that included this trail: <%= trip.name  %></h6>
+  <h6>Length of<%= " #{trip.name}: #{trip.total_distance}"  %></h6>
+<% end %>
+<p>Total number of hiking trips this trail was included: <%= @trips.count %><p>
